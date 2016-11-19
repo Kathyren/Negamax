@@ -29,7 +29,7 @@ public int[] negamax(ClassTablero tablero, int jugador, int profundidad, int alf
 
 
 	//max_puntuacion= -main.maximoInteger -1;///PREGUNTAR A ELOY
-        max_puntuacion=-1;
+    max_puntuacion=-(2^30)-1;
 	alfa_local=alfa;
 	//Arreglo de las jugadas que se pueden hacer segun el tablero
 	JugadasPosibles=tablero.jugadasPosibles();
