@@ -18,7 +18,7 @@ import javax.swing.JTextArea;
  * @author topitzin
  */
 public class ClassJugadorOrdenador extends ClassJugador{
-    public ClassTablero juega(ClassTablero tablero, boolean[] ProducidoClick, int[] col, JLabel TextLabelmensajes, JTextArea area){
+    public ClassTablero juega(ClassTablero tablero, boolean[] ProducidoClick, int[] col, JLabel TextLabelmensajes, JLabel area){
         int[] devolucion;
         ClassTablero tablerotmp;
         int jugada;
