@@ -17,7 +17,7 @@ import javax.swing.JTextArea;
  * @author topitzin
  */
 public class ClassJugadorHumano extends ClassJugador{
-    public ClassTablero juega(ClassTablero tablero, boolean[] ProducidoClick, int[] col, JLabel TextLabelmensajes, JTextArea area){
+    public ClassTablero juega(ClassTablero tablero, boolean[] ProducidoClick, int[] col, JLabel TextLabelmensajes, JLabel area){
         boolean ok = false;
         String[][] colorJugador = new String[2][2];
         
