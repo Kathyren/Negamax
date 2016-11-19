@@ -1,5 +1,10 @@
 package conecta4ia;
 
+import conecta4ia.ClassJugador;
+import conecta4ia.ClassJugadorHumano;
+import conecta4ia.ClassJugadorOrdenador;
+import conecta4ia.ClassTablero;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,6 +17,8 @@ package conecta4ia;
  */
 public class Conecta4 extends javax.swing.JFrame {
     public String[] texto ;
+    ClassTablero tablero;
+    ClassJugador jugador1, jugador2;
    // public int[] jugadores = new int[2];
      public ClassJugador[] jugadores = new ClassJugador[2];
     /**
@@ -30,6 +37,8 @@ public class Conecta4 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         cmb_Tipo = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -93,6 +102,11 @@ public class Conecta4 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         lbl_jugador = new javax.swing.JLabel();
         btn_jugar = new javax.swing.JButton();
+        lbl_error = new javax.swing.JLabel();
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Conecta4");
@@ -208,7 +222,7 @@ public class Conecta4 extends javax.swing.JFrame {
         D5.setLayout(D5Layout);
         D5Layout.setHorizontalGroup(
             D5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 53, Short.MAX_VALUE)
+            .addGap(0, 54, Short.MAX_VALUE)
         );
         D5Layout.setVerticalGroup(
             D5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -749,6 +763,11 @@ public class Conecta4 extends javax.swing.JFrame {
         );
 
         btn_A.setText("A");
+        btn_A.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_AMouseClicked(evt);
+            }
+        });
 
         btn_B.setText("B");
 
@@ -890,14 +909,13 @@ public class Conecta4 extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_D)
-                            .addComponent(btn_E)
-                            .addComponent(btn_F))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_C)
-                            .addComponent(btn_G)))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btn_D)
+                        .addComponent(btn_E)
+                        .addComponent(btn_F))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btn_C)
+                        .addComponent(btn_G))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btn_A)
                         .addComponent(btn_B)))
@@ -981,6 +999,8 @@ public class Conecta4 extends javax.swing.JFrame {
             }
         });
 
+        lbl_error.setFont(new java.awt.Font("Yu Gothic", 2, 18)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1005,8 +1025,11 @@ public class Conecta4 extends javax.swing.JFrame {
                         .addGap(106, 106, 106)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
-                        .addComponent(lbl_jugador)))
-                .addContainerGap(31, Short.MAX_VALUE))
+                        .addComponent(lbl_jugador, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(207, 207, 207)
+                        .addComponent(lbl_error, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1020,7 +1043,9 @@ public class Conecta4 extends javax.swing.JFrame {
                     .addComponent(cmb_Tipo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbl_error, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(lbl_jugador))
@@ -1039,6 +1064,7 @@ public class Conecta4 extends javax.swing.JFrame {
              jugadores[0].profundidad=4;//Es robot con maxima dificultad
              jugadores[1]= new ClassJugadorOrdenador();
              jugadores[1].profundidad=4;//Es robot con maxima dificultad
+             EmpezarJugar(jugadores,true);
                     
          }
         else
@@ -1048,40 +1074,56 @@ public class Conecta4 extends javax.swing.JFrame {
              jugadores[1]= new ClassJugadorHumano();
              jugadores[1].profundidad=4;//es humano
         }
+        btn_A.setEnabled(true);
+        btn_B.setEnabled(true);
+        btn_C.setEnabled(true);
+        btn_D.setEnabled(true);
+        btn_E.setEnabled(true);
+        btn_F.setEnabled(true);
+        btn_G.setEnabled(true);
+        tablero = new ClassTablero(null);
+        
     
     }//GEN-LAST:event_btn_jugarActionPerformed
 
-   void EmpezarJugar(ClassJugador[] jugadores)
+    private void btn_AMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_AMouseClicked
+
+        tablero = jugador1.juega(tablero, true, 0, lbl_error, lbl_jugador);
+
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_AMouseClicked
+
+   void EmpezarJugar(ClassJugador[] jugadores, Boolean j)
    {
-       ClassJugador jugador1, jugador2;
+       
        jugador1= jugadores[0];
        jugador2= jugadores[1];
        int[] jugadaganadora;
        int g;
        String gana;
        
-       ClassTablero tablero = new ClassTablero(null);
+      
         jugador1.numero = -1; //'jugador uno;
         jugador2.numero = 1; //'jugador dos;
         lbl_jugador.setText( "Jugador 1");
+        Boolean continua= true;
+        while (continua)
+        {
+            if (j)
+            {
+               
+            }
+        }
         
    }
     /*
     
     Public Sub EmpezarJugar()
-
-
-  ' controlador.max_profundidad = profundidad[Val(ComboBoxDificultad.text) - 1]
  
   While True
-    dibujatablero(tablero.muestra())
-    TextLabelMensajes.text = "Mensajes:"
-    If Object.Type(jugador1) = "ClassJugadorHumano" Then
-      TextLabelMensajes.text = "Mensajes:<br>" & gb.CrLf & "Jugador 1<br>Pulse en una de las columnas..<br>(amarillo)"
-    Else
-      TextLabelMensajes.text = "Mensajes:<br>" & gb.CrLf & " Pensando Ordenador..."
-      Application.busy = 1
-    Endif
+
     Wait 0.01
     tablero = jugador1.juega(tablero, ProducidoClick, col, TextLabelMensajes, TextAreaJugadas)
     Application.busy = 0
@@ -1226,6 +1268,9 @@ End
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lbl_error;
     private javax.swing.JLabel lbl_jugador;
     // End of variables declaration//GEN-END:variables
 
