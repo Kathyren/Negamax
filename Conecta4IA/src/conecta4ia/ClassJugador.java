@@ -30,7 +30,7 @@ public class ClassJugador {
     private int profundidad_Read(){  return hprofundidad; }
     private void profundidad_Write(int value){ hprofundidad = value; }
 
-    ClassTablero juega(ClassTablero tablero, boolean b, int i, JLabel lbl_error, JLabel lbl_jugador) {
+    ClassTablero juega(ClassTablero tablero, boolean ProducidoClick, int col, JLabel TextLabelmensajes, JLabel area) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

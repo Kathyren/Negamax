@@ -17,7 +17,8 @@ import javax.swing.JLabel;
  * @author topitzin
  */
 public class ClassJugadorHumano extends ClassJugador{
-    public ClassTablero juega(ClassTablero tablero, boolean[] ProducidoClick, int[] col, JLabel TextLabelmensajes, JLabel area){
+      @Override
+    public ClassTablero juega(ClassTablero tablero, boolean ProducidoClick, int col, JLabel TextLabelmensajes, JLabel area){
         boolean ok = false;
         String[][] colorJugador = new String[2][2];
         
@@ -27,19 +28,19 @@ public class ClassJugadorHumano extends ClassJugador{
         colorJugador[1][1] = "1";
         
         while(!ok){
-            if (ProducidoClick[0] = true){
-                area.setText("Jugador: "+colorJugador[super.numero]+ "Columna: "+ col[0]);
-                ok = tablero.insertaficha(col[0]-1,super.numero);
+            if (ProducidoClick ){
+                area.setText("Jugador: "+colorJugador[super.numero]+ "Columna: "+ col);
+                ok = tablero.insertaficha(col-1,super.numero);
                 if(!ok){
                     //Print "Moviemiento ILEGAL"
                     TextLabelmensajes.setText("Movimiento Ilegl");
-                    ProducidoClick[0] = false;
+                    ProducidoClick = false;
                 }
                 else{
-                    ProducidoClick[0] = false;
+                    ProducidoClick = false;
                     break;
                 }
-                ProducidoClick[0] = false;
+                ProducidoClick = false;
             }
             else{
                 try {

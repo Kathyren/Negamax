@@ -1151,6 +1151,7 @@ public class Conecta4 extends javax.swing.JFrame {
              jugadores[0].profundidad=4;//Es robot con maxima dificultad
              jugadores[1]= new ClassJugadorHumano();
              jugadores[1].profundidad=4;//es humano
+             EmpezarJugar(jugadores,true);
         }
         btn_A.setEnabled(true);
         btn_B.setEnabled(true);
@@ -1166,30 +1167,30 @@ public class Conecta4 extends javax.swing.JFrame {
 
     private void btn_AMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_AMouseClicked
 
-        //tablero = jugador1.juega(tablero, true, 0, lbl_error, lbl_jugador);
+        tablero = jugador1.juega(tablero, true, 0, lbl_error, lbl_jugador);
 
-
-
+        continua();
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_AMouseClicked
 
     private void btn_BMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BMouseClicked
-       // tablero = jugador1.juega(tablero, true, 1, lbl_error, lbl_jugador);
-       // continua();
+        tablero = jugador1.juega(tablero, true, 1, lbl_error, lbl_jugador);
+        continua();
     }//GEN-LAST:event_btn_BMouseClicked
 
     private void btn_CMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CMouseClicked
-            // TODO add your handling code here:
+            tablero = jugador1.juega(tablero, true, 2, lbl_error, lbl_jugador);   
+            continua();
     }//GEN-LAST:event_btn_CMouseClicked
 
     private void btn_DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DActionPerformed
-        tablero = jugador1.juega(tablero, true, 2, lbl_error, lbl_jugador);   
+       tablero = jugador1.juega(tablero, true, 3, lbl_error, lbl_jugador);   
             continua();
     }//GEN-LAST:event_btn_DActionPerformed
 
     private void btn_DMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_DMouseClicked
-       // tablero = jugador1.juega(tablero, true, 3, lbl_error, lbl_jugador);
-       // continua();
+        tablero = jugador1.juega(tablero, true, 3, lbl_error, lbl_jugador);
+        continua();
     }//GEN-LAST:event_btn_DMouseClicked
 
     private void btn_EMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_EMouseClicked

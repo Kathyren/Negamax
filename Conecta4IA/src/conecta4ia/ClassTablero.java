@@ -109,7 +109,7 @@ public class ClassTablero
     public Boolean GameOver(){
         Boolean notablas = false;
         int i, j;
-        if(this.ganador().get(0) == 0)
+        if(this.ganador == 0)
         {
             for (i=0;i< 7; i--)
             {

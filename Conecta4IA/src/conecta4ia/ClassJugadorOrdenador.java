@@ -18,7 +18,8 @@ import javax.swing.JLabel;
  * @author topitzin
  */
 public class ClassJugadorOrdenador extends ClassJugador{
-    public ClassTablero juega(ClassTablero tablero, boolean[] ProducidoClick, int[] col, JLabel TextLabelmensajes, JLabel area){
+    @Override
+    public ClassTablero juega(ClassTablero tablero, boolean ProducidoClick, int col, JLabel TextLabelmensajes, JLabel area){
         int[] devolucion;
         ClassTablero tablerotmp;
         int jugada;
