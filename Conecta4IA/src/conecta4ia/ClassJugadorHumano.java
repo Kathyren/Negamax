@@ -10,7 +10,7 @@ package conecta4ia;
  * @author Karen
  */
 import javax.swing.JLabel;
-import javax.swing.JTextArea;
+
 
 /**
  *

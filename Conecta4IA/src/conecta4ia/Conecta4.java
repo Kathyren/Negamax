@@ -4,6 +4,8 @@ import conecta4ia.ClassJugador;
 import conecta4ia.ClassJugadorHumano;
 import conecta4ia.ClassJugadorOrdenador;
 import conecta4ia.ClassTablero;
+import java.awt.Color;
+import javax.swing.JPanel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,14 +19,25 @@ import conecta4ia.ClassTablero;
  */
 public class Conecta4 extends javax.swing.JFrame {
     public String[] texto ;
+    javax.swing.JPanel[][] paneles;
     ClassTablero tablero;
     ClassJugador jugador1, jugador2;
+    int g;
    // public int[] jugadores = new int[2];
      public ClassJugador[] jugadores = new ClassJugador[2];
     /**
-     * Creates new form Conecta4
+     * Creates new form 
      */
     public Conecta4() {
+        this.paneles = new javax.swing.JPanel[][]{
+                        {A0, A1, A2,A3, A4, A5,A6},
+                        {B0, B1, B2,B3, B4, B5,B6},
+                        {C0, C1, C2,C3, C4, C5,C6},
+                        {D0, D1, D2,D3, D4, D5,D6},
+                        {E0, E1, E2,E3, E4, E5,E6},
+                        {F0, F1, F2,F3, F4, F5,F6},
+                        {G0, G1, G2,G3, G4, G5,G6},
+                                };
         initComponents();
     }
 
@@ -768,18 +781,83 @@ public class Conecta4 extends javax.swing.JFrame {
                 btn_AMouseClicked(evt);
             }
         });
+        btn_A.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_AActionPerformed(evt);
+            }
+        });
 
         btn_B.setText("B");
+        btn_B.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_BMouseClicked(evt);
+            }
+        });
+        btn_B.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_BActionPerformed(evt);
+            }
+        });
 
         btn_G.setText("G");
+        btn_G.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_GMouseClicked(evt);
+            }
+        });
+        btn_G.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_GActionPerformed(evt);
+            }
+        });
 
         btn_C.setText("C");
+        btn_C.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_CMouseClicked(evt);
+            }
+        });
+        btn_C.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CActionPerformed(evt);
+            }
+        });
 
         btn_F.setText("F");
+        btn_F.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_FMouseClicked(evt);
+            }
+        });
+        btn_F.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_FActionPerformed(evt);
+            }
+        });
 
         btn_E.setText("E");
+        btn_E.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_EMouseClicked(evt);
+            }
+        });
+        btn_E.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_EActionPerformed(evt);
+            }
+        });
 
         btn_D.setText("D");
+        btn_D.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_DMouseClicked(evt);
+            }
+        });
+        btn_D.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_DActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -1088,12 +1166,76 @@ public class Conecta4 extends javax.swing.JFrame {
 
     private void btn_AMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_AMouseClicked
 
-        tablero = jugador1.juega(tablero, true, 0, lbl_error, lbl_jugador);
+        //tablero = jugador1.juega(tablero, true, 0, lbl_error, lbl_jugador);
 
 
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_AMouseClicked
+
+    private void btn_BMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BMouseClicked
+       // tablero = jugador1.juega(tablero, true, 1, lbl_error, lbl_jugador);
+       // continua();
+    }//GEN-LAST:event_btn_BMouseClicked
+
+    private void btn_CMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CMouseClicked
+            // TODO add your handling code here:
+    }//GEN-LAST:event_btn_CMouseClicked
+
+    private void btn_DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DActionPerformed
+        tablero = jugador1.juega(tablero, true, 2, lbl_error, lbl_jugador);   
+            continua();
+    }//GEN-LAST:event_btn_DActionPerformed
+
+    private void btn_DMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_DMouseClicked
+       // tablero = jugador1.juega(tablero, true, 3, lbl_error, lbl_jugador);
+       // continua();
+    }//GEN-LAST:event_btn_DMouseClicked
+
+    private void btn_EMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_EMouseClicked
+        //tablero = jugador1.juega(tablero, true, 4, lbl_error, lbl_jugador);
+        //continua();
+    }//GEN-LAST:event_btn_EMouseClicked
+
+    private void btn_FMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_FMouseClicked
+       //tablero = jugador1.juega(tablero, true, 5, lbl_error, lbl_jugador);
+       //continua();
+    }//GEN-LAST:event_btn_FMouseClicked
+
+    private void btn_GMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_GMouseClicked
+        //tablero = jugador1.juega(tablero, true, 6, lbl_error, lbl_jugador); 
+        //continua();// TODO add your handling code here:
+    }//GEN-LAST:event_btn_GMouseClicked
+
+    private void btn_AActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AActionPerformed
+        tablero = jugador1.juega(tablero, true, 0, lbl_error, lbl_jugador);   
+            continua();
+    }//GEN-LAST:event_btn_AActionPerformed
+
+    private void btn_BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BActionPerformed
+        tablero = jugador1.juega(tablero, true, 1, lbl_error, lbl_jugador);   
+            continua();
+    }//GEN-LAST:event_btn_BActionPerformed
+
+    private void btn_CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CActionPerformed
+       tablero = jugador1.juega(tablero, true, 2, lbl_error, lbl_jugador);   
+            continua();
+    }//GEN-LAST:event_btn_CActionPerformed
+
+    private void btn_EActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EActionPerformed
+       tablero = jugador1.juega(tablero, true, 4, lbl_error, lbl_jugador);   
+            continua();
+    }//GEN-LAST:event_btn_EActionPerformed
+
+    private void btn_FActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_FActionPerformed
+       tablero = jugador1.juega(tablero, true, 5, lbl_error, lbl_jugador);   
+            continua();
+    }//GEN-LAST:event_btn_FActionPerformed
+
+    private void btn_GActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GActionPerformed
+      tablero = jugador1.juega(tablero, true, 6, lbl_error, lbl_jugador);   
+            continua();
+    }//GEN-LAST:event_btn_GActionPerformed
 
    void EmpezarJugar(ClassJugador[] jugadores, Boolean j)
    {
@@ -1101,55 +1243,52 @@ public class Conecta4 extends javax.swing.JFrame {
        jugador1= jugadores[0];
        jugador2= jugadores[1];
        int[] jugadaganadora;
-       int g;
+       
        String gana;
        
       
         jugador1.numero = -1; //'jugador uno;
         jugador2.numero = 1; //'jugador dos;
         lbl_jugador.setText( "Jugador 1");
-        Boolean continua= true;
-        while (continua)
-        {
-            if (j)
-            {
-               
-            }
-        }
         
+        
+   }
+   private void continua() 
+   { 
+       pintar();
+       if (tablero.GameOver())
+           finalizar();
+       else
+       {
+        g = tablero.ganador().get(0);
+        }
+      
+       
+   }
+   void finalizar()
+   {
+   }
+   void pintar()
+   {
+       int [][] pinta= tablero.muestra();
+       for (int i=0;i<7;i++)
+       {
+           for (int j=0; j<7; j++)
+           {
+               if (pinta[i][j]==1)
+                     paneles[i][j].setBackground(Color.blue);
+               else if (pinta[i][j]==-1)
+                    paneles[i][j].setBackground(Color.green);
+           }
+           
+       }
+       
+       
    }
     /*
     
-    Public Sub EmpezarJugar()
- 
-  While True
-
-    Wait 0.01
-    tablero = jugador1.juega(tablero, ProducidoClick, col, TextLabelMensajes, TextAreaJugadas)
-    Application.busy = 0
-    ProducidoClick[0] = False
-    If tablero.GameOver() Then Break
-    dibujatablero(tablero.muestra())
-    If Object.Type(jugador2) = "ClassJugadorHumano" Then
-      TextLabelMensajes.text = "Mensajes:<br>" & gb.CrLf & "Jugador 2 <br>Pulse en una de las columnas..<br>(naranja)"
-    Else
-      TextLabelMensajes.text = "Mensajes:<br>" & gb.CrLf & " Pensando Ordenador..."
-      Application.busy = 1
-    Endif
-    Wait 0.01
-    tablero = jugador2.juega(tablero, ProducidoClick, col, TextLabelMensajes, TextAreaJugadas)
-    Application.busy = 0
-    dibujatablero(tablero.muestra())
-   
-    If tablero.GameOver() Then Break
-    '   Print main.sumacero, main.sumauno
-  Wend
- 
-  tablero.muestra
- 
-  g = tablero.ganador()[0]
- 
-  If g == 0 Then
+    
+    If g == 0 Then
     gana = "Tablas"
    
   Else If g = -1 Then
@@ -1274,7 +1413,7 @@ End
     private javax.swing.JLabel lbl_jugador;
     // End of variables declaration//GEN-END:variables
 
-    private void If(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
+
+   
 }

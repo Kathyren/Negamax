@@ -55,7 +55,7 @@ public class ClassTablero
                 texto[a][b]= hcasillas[a][b];
             }
         }
-        return hcasillas;
+        return texto;
     }
 
    // private int [][] hcasillas = new int[7][7];
