@@ -23,7 +23,15 @@ public class ClassTablero
     /*
     *Devuelve el ganador, uno sera 1 y el otro -1
     */
-    int[][] casillas=new int[7][7];;
+    int[][] casillas={
+	{0,0,0,0,0,0,0},	
+	{0,0,0,0,0,0,0},
+	{0,0,0,0,0,0,0},
+	{0,0,0,0,0,0,0},
+	{0,0,0,0,0,0,0},
+	{0,0,0,0,0,0,0},
+	{0,0,0,0,0,0,0}
+};
     public int ganador;
     public int[][] hcasillas = new int[7][7];
 
@@ -107,17 +115,17 @@ public class ClassTablero
     }
 
     public Boolean GameOver(){
-        Boolean notablas = false;
+        //Boolean notablas = false;
         int i, j;
         if(this.ganador == 0)
         {
-            for (i=0;i< 7; i--)
+            for (i=6;i>=0; i--)
             {
-                for (j=0;j < 7;j--) 
+                for (j=6;j >=0;j--) 
                 {
                     if (this.casillas[i][j] == 0)
                     {
-                        notablas= true;
+                        //notablas= true;
                         return false;
                     }    
                 }
@@ -133,7 +141,7 @@ public class ClassTablero
     public int[] jugadasPosibles()
     {
         int columna;
-        int[] listaJugadas = {-1,-1,-1,-1,-1,-1,-1};
+        int[] listaJugadas = {0,0,0,0,0,0,0};
         //ArrayList<Integer> listaJugadas = new ArrayList<Integer> ();
 
         for (columna = 0; columna < 7; columna++) {

@@ -1167,20 +1167,20 @@ public class Conecta4 extends javax.swing.JFrame {
 
     private void btn_AMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_AMouseClicked
 
-        tablero = jugador1.juega(tablero, true, 0, lbl_error, lbl_jugador);
+       // tablero = jugador1.juega(tablero, true, 0, lbl_error, lbl_jugador);
 
-        continua();
+        //continua();
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_AMouseClicked
 
     private void btn_BMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_BMouseClicked
-        tablero = jugador1.juega(tablero, true, 1, lbl_error, lbl_jugador);
-        continua();
+        //tablero = jugador1.juega(tablero, true, 1, lbl_error, lbl_jugador);
+        //continua();
     }//GEN-LAST:event_btn_BMouseClicked
 
     private void btn_CMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CMouseClicked
-            tablero = jugador1.juega(tablero, true, 2, lbl_error, lbl_jugador);   
-            continua();
+            //tablero = jugador1.juega(tablero, true, 2, lbl_error, lbl_jugador);   
+            //continua();
     }//GEN-LAST:event_btn_CMouseClicked
 
     private void btn_DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_DActionPerformed
@@ -1189,8 +1189,8 @@ public class Conecta4 extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_DActionPerformed
 
     private void btn_DMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_DMouseClicked
-        tablero = jugador1.juega(tablero, true, 3, lbl_error, lbl_jugador);
-        continua();
+        //tablero = jugador1.juega(tablero, true, 3, lbl_error, lbl_jugador);
+        //continua();
     }//GEN-LAST:event_btn_DMouseClicked
 
     private void btn_EMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_EMouseClicked

@@ -36,9 +36,15 @@ public int[] negamax(ClassTablero tablero, int jugador, int profundidad, int alf
 
 	//Repite por cada jugada posible
 	tableroaux = new ClassTablero(tablero);
-	for(contador=0;contador<JugadasPosibles.length; contador++)
+	for( contador=0;contador<JugadasPosibles.length; contador++)
 	{
+            try{
 		tableroaux.insertaficha(JugadasPosibles[contador],jugador);
+            }
+            catch (Exception e)
+            { String E =e.getMessage();
+                E=E;
+            }
 		//tableroaux.muestra
 		if(tableroaux.GameOver() || profundidad==0)
 		{
@@ -46,7 +52,8 @@ public int[] negamax(ClassTablero tablero, int jugador, int profundidad, int alf
 		}
 		else
 		{
-			puntuacion= -negamax(tableroaux,jugador*(-1),profundidad -1,-beta,-alfa_local)[0];
+                        int j=-jugador;
+			puntuacion= -negamax(tableroaux,j,profundidad -1,-beta,-alfa_local)[0];
 			tableroaux.deshacer(JugadasPosibles[contador]);
 			if(puntuacion> max_puntuacion)
 			{
