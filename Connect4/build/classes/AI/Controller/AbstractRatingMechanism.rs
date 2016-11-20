@@ -1,0 +1,9 @@
+Connect4.AI.Controller.AbstractRatingMechanism$5
+Connect4.AI.Controller.AbstractRatingMechanism$GetMyFieldStatus
+Connect4.AI.Controller.AbstractRatingMechanism$4
+Connect4.AI.Controller.AbstractRatingMechanism$3
+Connect4.AI.Controller.AbstractRatingMechanism$2
+Connect4.AI.Controller.AbstractRatingMechanism
+Connect4.AI.Controller.AbstractRatingMechanism$7
+Connect4.AI.Controller.AbstractRatingMechanism$6
+Connect4.AI.Controller.AbstractRatingMechanism$1
